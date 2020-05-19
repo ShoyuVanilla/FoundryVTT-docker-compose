@@ -1,6 +1,6 @@
 # FoundryVTT docker-compose
 
-[한국어 가이드](https://ttgt.shoyuvanilla.net/vtt/foundryvtt/hosting/cloud_server.html)
+한국어 가이드는 [여기](https://ttgt.shoyuvanilla.net/vtt/foundryvtt/hosting/cloud_server.html)를 참고하세요.
 
 ![](./README_images/fvtt_cloud00.png)
 
