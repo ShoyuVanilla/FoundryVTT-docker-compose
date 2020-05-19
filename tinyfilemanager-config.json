@@ -1,0 +1,14 @@
+{
+  "default_timezone": "Asia/Seoul",
+  "auth_users": [
+    {
+      "username": "admin",
+      "password": "admin@123"
+    },
+    {
+      "username": "user",
+      "password": "12345",
+      "userdir": "/data/foundrydata/Data"
+    }
+  ]
+}

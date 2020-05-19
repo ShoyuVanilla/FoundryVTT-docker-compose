@@ -1,0 +1,21 @@
+version: '3'
+services:
+  foundryvtt:
+    container_name: foundryvtt
+    image: shoyuvanilla/foundryvtt
+    ports:
+      - "80:30000"
+    restart: always
+    volumes:
+      - ./foundryvtt:/foundryvtt
+      - ./foundrydata:/root/.local/share/FoundryVTT
+
+  tinyfilemanager:
+    container_name: tinyfilemanager
+    image: shoyuvanilla/tinyfilemanager-forfvtt
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - ./:/data
+      - ./tinyfilemanager-config.json:/config.json
