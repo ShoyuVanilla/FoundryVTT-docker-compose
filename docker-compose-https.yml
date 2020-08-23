@@ -8,13 +8,13 @@ services:
       - ./foundryvtt:/foundryvtt
       - ./foundrydata:/root/.local/share/FoundryVTT
 
-  tinyfilemanager:
-    container_name: tinyfilemanager
-    image: shoyuvanilla/tinyfilemanager-forfvtt
+  filegator:
+    container_name: filegator
+    image: shoyuvanilla/filegator
     restart: always
     volumes:
-      - ./:/data
-      - ./tinyfilemanager-config.json:/config.json
+      - ./:/var/www/html/filegator/repository
+      - ./filegator-configuration.php:/var/www/html/filegator/configuration.php
 
   https-portal:
     container_name: https-portal
