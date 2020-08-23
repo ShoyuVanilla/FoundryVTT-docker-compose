@@ -3,7 +3,7 @@
 install_path=${HOME}/FoundryServer
 
 clone_repo() {
-    sudo git clone -b release --single-branch https://github.com/ShoyuVanilla/FoundryVTT-docker-compose ${install_path}
+    sudo git clone -b filegator --single-branch https://github.com/ShoyuVanilla/FoundryVTT-docker-compose ${install_path}
 }
 
 install_docker() {
