@@ -2,8 +2,9 @@ version: '3'
 services:
   foundryvtt:
     container_name: foundryvtt
-    image: shoyuvanilla/foundryvtt
+    image: node:14.15.5-alpine3.13
     restart: always
+    command: ["node", "/foundryvtt/resources/app/main.js", "--headless"]
     volumes:
       - ./foundryvtt:/foundryvtt
       - ./foundrydata:/root/.local/share/FoundryVTT
@@ -13,12 +14,12 @@ services:
     image: shoyuvanilla/tinyfilemanager-forfvtt
     restart: always
     volumes:
-      - ./:/data
-      - ./tinyfilemanager-config.json:/config.json
+      - ./:/app/tinyfilemanager/data
+      - ./tinyfilemanager-config.php:/app/tinyfilemanager/config.php
 
   https-portal:
     container_name: https-portal
-    image: steveltn/https-portal
+    image: steveltn/https-portal:1.17.5
     ports:
       - 80:80
       - 443:443
@@ -26,7 +27,7 @@ services:
     environment:
       STAGE: production
       PROXY_READ_TIMEOUT: 3600
-      CLIENT_MAX_BODY_SIZE: 200M
+      CLIENT_MAX_BODY_SIZE: 10G
       WEBSOCKET: 'true'
     volumes:
       - ssl-certs:/var/lib/https-portal
