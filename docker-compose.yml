@@ -2,10 +2,11 @@ version: '3'
 services:
   foundryvtt:
     container_name: foundryvtt
-    image: shoyuvanilla/foundryvtt
+    image: node:14.15.5-alpine3.13
     ports:
       - "80:30000"
     restart: always
+    command: ["node", "/foundryvtt/resources/app/main.js", "--headless"]
     volumes:
       - ./foundryvtt:/foundryvtt
       - ./foundrydata:/root/.local/share/FoundryVTT
@@ -17,5 +18,5 @@ services:
       - "8080:80"
     restart: always
     volumes:
-      - ./:/data
-      - ./tinyfilemanager-config.json:/config.json
+      - ./:/app/tinyfilemanager/data
+      - ./tinyfilemanager-config.php:/app/tinyfilemanager/config.php
