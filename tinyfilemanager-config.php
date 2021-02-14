@@ -61,7 +61,7 @@ $http_host = $_SERVER['HTTP_HOST'];
 // array('Username' => 'Directory path', 'Username2' => 'Directory path', ...)
 $directories_users = array(
     'admin' => 'data',
-    'user' => 'data/foundrydata/Data'
+    'user' => 'data/foundrydata/Data/player-uploads'
 );
 
 // input encoding for iconv
