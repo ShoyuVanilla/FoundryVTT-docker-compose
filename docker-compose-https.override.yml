@@ -2,4 +2,4 @@ version: '3'
 services:
   https-portal:
     environment:
-      DOMAINS: 'foo.mydomain.com -> http://foundryvtt:80, bar.mydomain.com -> http://tinyfilemanager:80'
+      DOMAINS: 'foo.mydomain.com -> http://foundryvtt:30000, bar.mydomain.com -> http://tinyfilemanager:80'
