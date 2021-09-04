@@ -37,7 +37,7 @@ make_alias() {
 main() {
     clone_repo
     install_docker
-    open_ports
+    open_ports || :
     make_alias
 }
 
